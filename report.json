@@ -1,0 +1,33 @@
+{
+  "startTime": "2018-02-26T06:15:40.562Z",
+  "endTime": "2018-02-26T06:16:38.973Z",
+  "userAgents": [
+    "Chrome 63.0.3239 / Windows 10.0.0"
+  ],
+  "passed": 2,
+  "total": 2,
+  "skipped": 0,
+  "fixtures": [
+    {
+      "name": "Tests for Peddle",
+      "path": "C:\\dev\\testcafe\\test.ts",
+      "tests": [
+        {
+          "name": "Testing Nissan Titan",
+          "errs": [],
+          "durationMs": 33414,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "Testing Chev Silverado",
+          "errs": [],
+          "durationMs": 24977,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}

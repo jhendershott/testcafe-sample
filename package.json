@@ -1,0 +1,17 @@
+{
+  "name": "atx-automation-pros-sample",
+  "version": "1.0.0",
+  "description": "Basic TestCafe example",
+  "main": "test.js",
+  "scripts": {
+    "test": "testcafe all test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevExpress/testcafe.git"
+  },
+  "author": "Joel Hendershott",
+  "devDependencies": {
+    "testcafe": "*"
+  }
+}
