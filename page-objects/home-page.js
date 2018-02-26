@@ -2,9 +2,7 @@ import { Selector } from 'testcafe';
 
 const label = Selector('label');
 
-export class Page {
-    offerButton: Selector;
-    header: Selector;
+export class HomePage {
 
     constructor () {
         this.header             = Selector('.headerTagLine');

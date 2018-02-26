@@ -1,11 +1,11 @@
 import {Selector} from 'testcafe';
-import { Page } from '../page-objects/home-page'
+import { HomePage } from '../page-objects/home-page'
 import { Seller } from '../page-objects/seller-offer-generate';
 
 fixture `Tests for Peddle`
     .page `https://www.peddle.com/`;
 
-    const page = new Page();
+    const homePage = new HomePage();
     const seller = new Seller();
 
 // Tests
@@ -35,18 +35,14 @@ test('Testing Nissan Titan', async t => {
         .expect(seller.preInstantOfferAmt.innerText).eql('$9,000', 'this is less than I owe, its total crap');
 });
         
-// test('Testing Chev Silverado', async t => {
-//     await t
-//         .expect(page.header.innerText).contains('This is Peddle,')
-//         .click(page.offerButton)
-//         .typeText(seller.yearInput,'2009')
-//         .typeText(seller.makeInput,'Chevrolet')
-//         .typeText(seller.modelInput,'silver');
-
-//         seller.findList('Silverado Crew Cab (4 door)', t);
-//         seller.findList('C1500 (Flex Fuel)', t);
-
-//     await t
-//         .click(Selector('#titleTypeCheckboxYesId > div > input[type="radio"]'))
-//         .wait(1000);
-// });
+ test('Testing Chev Silverado', async t => {
+     await t
+         .resizeWindow(400, 480)
+         .expect(page.header.innerText).contains('This is Peddle,')
+         .click(page.offerButton)
+         .typeText(seller.yearInput,'2009')
+         .typeText(seller.makeInput,'Chevrolet')
+         .typeText(seller.modelInput,'silver')
+         .click(seller.listItem.withText('Silverado Crew Cab (4 door)'))
+         .click(seller.listItem.withText('C1500 (Flex Fuel)'))
+ });

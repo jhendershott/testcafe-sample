@@ -3,24 +3,6 @@ import { Selector } from 'testcafe';
 const label = Selector('label');
 
 export class Seller {
-    listItem: Selector;
-    nextButton: Selector;
-    drivableYes: Selector;
-    mileageInput: Selector;
-    bodyPanelsYes: Selector;
-    bodyDamageNo: Selector;
-    glassLightDamagaNo: Selector;
-    InteriorItemsYes: Selector;
-    floodDamageNo: Selector;
-    InstantOfferContainer: Selector;
-    preInstantOfferAmt: Selector;
-    titleYes: Selector;
-    tiresInflatedYes: Selector;
-    zipInput: Selector;
-    makeInput: Selector;
-    selectList: Selector;
-    modelInput: Selector;
-    yearInput: Selector;
 
     constructor () {
         this.yearInput          = Selector('#yearInput');
