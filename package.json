@@ -11,7 +11,15 @@
     "url": "git+https://github.com/DevExpress/testcafe.git"
   },
   "author": "Joel Hendershott",
+  "license": "MIT",
   "devDependencies": {
-    "testcafe": "*"
+    "testcafe": "*",
+    "testcafe-angular-selectors": "*",
+    "testcafe-aurelia-selectors": "*",
+    "testcafe-react-selectors": "*",
+    "testcafe-vue-selectors": "*"
+  },
+  "dependencies": {
+    "testcafe-react-selectors": "^1.0.5"
   }
 }

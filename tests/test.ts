@@ -4,6 +4,12 @@ import { Seller } from '../page-objects/seller-offer-generate';
 
 fixture `Tests for Peddle`
     .page `https://www.peddle.com/`
+    .httpAuth({
+        username: 'some.dude@email.com',
+        password: 'definitelynotmyrealpassword',
+        domain: 'us/corp',
+        workstation: 'theMostPowerful'
+    })
 
     const homePage = new HomePage();
     const seller = new Seller();
@@ -11,7 +17,7 @@ fixture `Tests for Peddle`
     const regularUser = Role('https://www.peddle.com', async t => {
         await t
             .click(Selector('#headerLoginLinkId'))
-            .typeText(Selector('#loginEmailInput'), 'joel.hendershott@gmail.com')
+            .typeText(Selector('#loginEmailInput'), 'some.dude@email.com')
             .typeText(Selector('#loginPasswordInput') ,'definitelynotmyrealpassword')
             .click(Selector('#loginModalButtonId'));
     });
@@ -26,7 +32,7 @@ test('Testing Nissan Titan', async t => {
         .typeText(seller.modelInput,'Titan')
         .click(seller.listItem.withText('Titan Crew Cab (4 door)'))
         .click(seller.listItem.withText('SE (Flex Fuel)'))
-        .click(seller.listItem.withText('I have a clean title.'))
+        .click(seller.titleYes)
         .click(seller.zipInput)
         .typeText(seller.zipInput, '78641')        
         .click(seller.listItem.withText('All wheels are mounted and tires are inflated.'))
