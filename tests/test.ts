@@ -57,6 +57,7 @@ test('Testing Nissan Titan', async t => {
 
  test('Log in', async t => {
     await t
+        .resizeWindow(1024,768)
         .useRole(regularUser);
         
  });
