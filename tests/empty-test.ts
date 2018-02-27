@@ -1,0 +1,1 @@
+import {Selector} from 'testcafe';

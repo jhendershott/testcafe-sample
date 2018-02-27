@@ -1,18 +1,26 @@
-import {Selector} from 'testcafe';
+import { Selector, Role} from 'testcafe';
 import { HomePage } from '../page-objects/home-page'
 import { Seller } from '../page-objects/seller-offer-generate';
 
 fixture `Tests for Peddle`
-    .page `https://www.peddle.com/`;
+    .page `https://www.peddle.com/`
 
     const homePage = new HomePage();
     const seller = new Seller();
 
+    const regularUser = Role('https://www.peddle.com', async t => {
+        await t
+            .click(Selector('#headerLoginLinkId'))
+            .typeText(Selector('#loginEmailInput'), 'joel.hendershott@gmail.com')
+            .typeText(Selector('#loginPasswordInput') ,'definitelynotmyrealpassword')
+            .click(Selector('#loginModalButtonId'));
+    });
+
 // Tests
 test('Testing Nissan Titan', async t => {
     await t
-        .expect(page.header.innerText).contains('This is Peddle,')
-        .click(page.offerButton)
+        .expect(homePage.header.innerText).contains('This is Peddle,')
+        .click(homePage.offerButton)
         .typeText(seller.yearInput,'2009')
         .typeText(seller.makeInput,'Nissan')
         .typeText(seller.modelInput,'Titan')
@@ -38,11 +46,17 @@ test('Testing Nissan Titan', async t => {
  test('Testing Chev Silverado', async t => {
      await t
          .resizeWindow(400, 480)
-         .expect(page.header.innerText).contains('This is Peddle,')
-         .click(page.offerButton)
+         .expect(homePage.header.innerText).contains('This is Peddle,')
+         .click(homePage.offerButton)
          .typeText(seller.yearInput,'2009')
          .typeText(seller.makeInput,'Chevrolet')
          .typeText(seller.modelInput,'silver')
          .click(seller.listItem.withText('Silverado Crew Cab (4 door)'))
          .click(seller.listItem.withText('C1500 (Flex Fuel)'))
+ });
+
+ test('Log in', async t => {
+    await t
+        .useRole(regularUser);
+        
  });

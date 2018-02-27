@@ -4,6 +4,25 @@ const label = Selector('label');
 
 export class Seller {
 
+    yearInput: Selector;
+    makeInput: Selector;
+    modelInput: Selector;
+    selectList: Selector;
+    zipInput: Selector;
+    titleYes: Selector;
+    tiresInflatedYes: Selector;
+    drivableYes: Selector;
+    mileageInput: Selector;
+    bodyPanelsYes: Selector;
+    bodyDamageNo: Selector;
+    glassLightDamagaNo: Selector;
+    InteriorItemsYes: Selector;
+    floodDamageNo: Selector;
+    InstantOfferContainer: Selector;
+    preInstantOfferAmt: Selector;
+    nextButton: Selector;
+    listItem: Selector;
+    
     constructor () {
         this.yearInput          = Selector('#yearInput');
         this.makeInput          = Selector('#makeInput');
