@@ -10,3 +10,6 @@ All you need to do to use this project is:
 
 you can also run in all browsers (note, i had connection problems when running in all browsers)
 - testcafe all tests/test.ts
+
+If you're not installing testcafe globally then you may need to use the command
+node node_modules\testcafe\bin\testcafe.js chrome tests\test.ts
